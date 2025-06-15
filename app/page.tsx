@@ -7,12 +7,11 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Moon, Sun, Globe, Camera, BarChart3, Leaf } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { translations, languageNames } from "@/lib/constants";
+import { translations, languageNames, Language } from "@/lib/constants";
 
 export default function LandingPage() {
-  type Language = "en" | "si" | "ta"
   const { language, setLanguage, theme, setTheme } = useAppContext();
-  const t = translations[language]
+  const t = translations.landing[language]
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light")
