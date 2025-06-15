@@ -3,7 +3,7 @@ export type Language = "en" | "si" | "ta";
 export const translations = {
     landing: {
         en: {
-            appTitle: "CassavaAI",
+            appTitle: "AgroVision",
             tagline: "Smart Cassava Farming with AI",
             description:
                 "Detect diseases early and predict yields accurately with our AI-powered tools designed for Sri Lankan farmers.",
@@ -15,18 +15,18 @@ export const translations = {
             learnMore: "Learn More",
         },
         si: {
-            appTitle: "කැසාවා AI",
-            tagline: "AI සමඟ බුද්ධිමත් කැසාවා වගාව",
+            appTitle: "ඇග්‍රෝ විෂන්",
+            tagline: "AI සමඟ බුද්ධිමත් මඤ්ඤොක්කා වගාව",
             description: "ශ්‍රී ලංකා ගොවීන් සඳහා නිර්මාණය කරන ලද අපගේ AI මෙවලම් සමඟ රෝග ඉක්මනින් හඳුනාගෙන අස්වැන්න නිවැරදිව පුරෝකථනය කරන්න.",
             diseaseDetection: "රෝග හඳුනාගැනීම",
-            diseaseDesc: "කැසාවා රෝග ක්ෂණිකව හඳුනාගැනීමට ඡායාරූප උඩුගත කරන්න",
+            diseaseDesc: "මඤ්ඤොක්කා රෝග ක්ෂණිකව හඳුනාගැනීමට ඡායාරූප උඩුගත කරන්න",
             yieldPrediction: "අස්වැන්න පුරෝකථනය",
             yieldDesc: "AI විශ්ලේෂණය සමඟ ඔබේ අස්වැන්න පුරෝකථනය කරන්න",
             getStarted: "ආරම්භ කරන්න",
             learnMore: "තව දැනගන්න",
         },
         ta: {
-            appTitle: "கசாவா AI",
+            appTitle: "அக்ரோ விஷன்",
             tagline: "AI உடன் புத்திசாலித்தனமான கசாவா விவசாயம்",
             description: "இலங்கை விவசாயிகளுக்காக வடிவமைக்கப்பட்ட எங்கள் AI கருவிகளுடன் நோய்களை விரைவில் கண்டறிந்து மகசூலை துல்லியமாக கணிக்கவும்.",
             diseaseDetection: "நோய் கண்டறிதல்",
@@ -64,10 +64,10 @@ export const translations = {
             backToHome: "Back to Home",
         },
         si: {
-            title: "කැසාවා රෝග හඳුනාගැනීම",
-            subtitle: "AI මගින් රෝග විශ්ලේෂණය සඳහා ඔබේ කැසාවා කොළයේ ඡායාරූපයක් උඩුගත කරන්න",
+            title: "මඤ්ඤොක්කා රෝග හඳුනාගැනීම",
+            subtitle: "AI මගින් රෝග විශ්ලේෂණය සඳහා ඔබේ මඤ්ඤොක්කා කොළයේ ඡායාරූපයක් උඩුගත කරන්න",
             instructions: [
-                "තනි කැසාවා කොළයක පැහැදිලි ඡායාරූපයක් ගන්න",
+                "තනි මඤ්ඤොක්කා කොළයක පැහැදිලි ඡායාරූපයක් ගන්න",
                 "හොඳ ආලෝකය සහ නාභිගත කිරීම සහතික කරන්න",
                 "සම්පූර්ණ කොළය රාමුව තුළ ඇතුළත් කරන්න",
                 "සෙවණැලි සහ බොඳ රූප වළක්වන්න",
@@ -177,7 +177,7 @@ export const translations = {
             invalidNumber: "Please enter a valid number",
         },
         si: {
-            title: "කැසාවා අස්වැන්න පුරෝකථනය",
+            title: "මඤ්ඤොක්කා අස්වැන්න පුරෝකථනය",
             subtitle: "AI මගින් අස්වැන්න පුරෝකථනය ලබා ගැනීමට ඔබේ ශාක මිනුම් ඇතුළත් කරන්න",
             plantMetrics: "ශාක මිනුම්",
             environmentalFactors: "පරිසර සාධක",
@@ -199,8 +199,8 @@ export const translations = {
             fertilizerDesc: "භාවිතා කරන පොහොර වර්ගය සහ වාර ගණන",
             plantingDensity: "රෝපණ ඝනත්වය",
             plantingDensityDesc: "හෙක්ටයරයකට ශාක ගණන",
-            variety: "කැසාවා ප්‍රභේදය",
-            varietyDesc: "ඔබ වගා කරන කැසාවා ප්‍රභේදය තෝරන්න",
+            variety: "මඤ්ඤොක්කා ප්‍රභේදය",
+            varietyDesc: "ඔබ වගා කරන මඤ්ඤොක්කා ප්‍රභේදය තෝරන්න",
 
             moistureLevels: {
                 low: "අඩු (වියළි පස)",

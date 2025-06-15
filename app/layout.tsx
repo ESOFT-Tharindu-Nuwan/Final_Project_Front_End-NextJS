@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CassavaAI",
+  title: "AgroVision",
   description: "Smart Cassava Farming with AI",
 };
 

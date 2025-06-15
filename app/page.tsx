@@ -122,7 +122,7 @@ export default function LandingPage() {
           <div className="relative">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/hero-section-image.png"
                 alt="Cassava field with healthy plants"
                 fill
                 className="object-cover"
