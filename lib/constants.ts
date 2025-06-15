@@ -113,7 +113,182 @@ export const translations = {
             fileSelected: "கோப்பு வெற்றிகரமாக தேர்ந்தெடுக்கப்பட்டது",
             backToHome: "முகப்புக்கு",
         },
-    }
+    },
+    yeild: {
+        en: {
+            title: "Cassava Yield Prediction",
+            subtitle: "Enter your plant measurements to get an AI-powered yield prediction",
+            plantMetrics: "Plant Measurements",
+            environmentalFactors: "Environmental Factors",
+            farmingPractices: "Farming Practices",
+
+            // Form fields
+            plantHeight: "Plant Height",
+            plantHeightDesc: "Measure from soil level to the top of the main stem",
+            stemDiameter: "Stem Diameter",
+            stemDiameterDesc: "Measure the thickness of the main stem at 30cm from ground",
+            leafCount: "Active Leaf Count",
+            leafCountDesc: "Count only healthy, fully developed leaves",
+            plantAge: "Plant Age",
+            plantAgeDesc: "Number of months since planting",
+            soilMoisture: "Soil Moisture Level",
+            soilMoistureDesc: "Current soil moisture condition",
+            temperature: "Average Temperature",
+            temperatureDesc: "Average daily temperature in your area",
+            fertilizer: "Fertilizer Application",
+            fertilizerDesc: "Type and frequency of fertilizer used",
+            plantingDensity: "Planting Density",
+            plantingDensityDesc: "Number of plants per hectare",
+            variety: "Cassava Variety",
+            varietyDesc: "Select the cassava variety you are growing",
+
+            // Options
+            moistureLevels: {
+                low: "Low (Dry soil)",
+                medium: "Medium (Moist soil)",
+                high: "High (Wet soil)",
+            },
+            fertilizerTypes: {
+                none: "No fertilizer",
+                organic: "Organic fertilizer",
+                chemical: "Chemical fertilizer",
+                mixed: "Mixed (Organic + Chemical)",
+            },
+            varieties: {
+                local: "Local variety",
+                improved: "Improved variety",
+                hybrid: "Hybrid variety",
+            },
+
+            // Units
+            cm: "cm",
+            months: "months",
+            celsius: "°C",
+            plantsPerHectare: "plants/hectare",
+
+            // Buttons
+            predictYield: "Predict Yield",
+            predicting: "Predicting...",
+            reset: "Reset Form",
+            backToHome: "Back to Home",
+
+            // Validation
+            required: "This field is required",
+            invalidNumber: "Please enter a valid number",
+        },
+        si: {
+            title: "කැසාවා අස්වැන්න පුරෝකථනය",
+            subtitle: "AI මගින් අස්වැන්න පුරෝකථනය ලබා ගැනීමට ඔබේ ශාක මිනුම් ඇතුළත් කරන්න",
+            plantMetrics: "ශාක මිනුම්",
+            environmentalFactors: "පරිසර සාධක",
+            farmingPractices: "ගොවිතැන් ක්‍රම",
+
+            plantHeight: "ශාක උස",
+            plantHeightDesc: "පස් මට්ටමේ සිට ප්‍රධාන කඳේ මුදුන දක්වා මනින්න",
+            stemDiameter: "කඳ විෂ්කම්භය",
+            stemDiameterDesc: "බිමේ සිට සෙ.මී. 30ක් උසින් ප���‍රධාන කඳේ ඝනකම මනින්න",
+            leafCount: "ක්‍රියාකාරී කොළ ගණන",
+            leafCountDesc: "සෞඛ්‍ය සම්පන්න, සම්පූර්ණයෙන් වර්ධනය වූ කොළ පමණක් ගණන් කරන්න",
+            plantAge: "ශාක වයස",
+            plantAgeDesc: "රෝපණය කළ දින සිට මාස ගණන",
+            soilMoisture: "පස් තෙතමනය",
+            soilMoistureDesc: "වර්තමාන පස් තෙතමනයේ තත්ත්වය",
+            temperature: "සාමාන්‍ය උෂ්ණත්වය",
+            temperatureDesc: "ඔබේ ප්‍රදේශයේ සාමාන්‍ය දෛනික උෂ්ණත්වය",
+            fertilizer: "පොහොර යෙදීම",
+            fertilizerDesc: "භාවිතා කරන පොහොර වර්ගය සහ වාර ගණන",
+            plantingDensity: "රෝපණ ඝනත්වය",
+            plantingDensityDesc: "හෙක්ටයරයකට ශාක ගණන",
+            variety: "කැසාවා ප්‍රභේදය",
+            varietyDesc: "ඔබ වගා කරන කැසාවා ප්‍රභේදය තෝරන්න",
+
+            moistureLevels: {
+                low: "අඩු (වියළි පස)",
+                medium: "මධ්‍යම (තෙත් පස)",
+                high: "ඉහළ (තෙත් පස)",
+            },
+            fertilizerTypes: {
+                none: "පොහොර නැත",
+                organic: "කාබනික පොහොර",
+                chemical: "රසායනික පොහොර",
+                mixed: "මිශ්‍ර (කාබනික + රසායනික)",
+            },
+            varieties: {
+                local: "දේශීය ප්‍රභේදය",
+                improved: "වැඩිදියුණු කළ ප්‍රභේදය",
+                hybrid: "දෙමුහුන් ප්‍රභේදය",
+            },
+
+            cm: "සෙ.මී.",
+            months: "මාස",
+            celsius: "°C",
+            plantsPerHectare: "ශාක/හෙක්ටයර",
+
+            predictYield: "අස්වැන්න පුරෝකථනය කරන්න",
+            predicting: "පුරෝකථනය කරමින්...",
+            reset: "ආකෘතිය නැවත සකසන්න",
+            backToHome: "මුල් පිටුවට",
+
+            required: "මෙම ක්ෂේත්‍රය අවශ්‍යයි",
+            invalidNumber: "කරුණාකර වලංගු අංකයක් ඇතුළත් කරන්න",
+        },
+        ta: {
+            title: "கசாவா மகசூல் கணிப்பு",
+            subtitle: "AI மூலம் மகசூல் கணிப்பு பெற உங்கள் தாவர அளவீடுகளை உள்ளிடவும்",
+            plantMetrics: "தாவர அளவீடுகள்",
+            environmentalFactors: "சுற்றுச்சூழல் காரணிகள்",
+            farmingPractices: "விவசாய முறைகள்",
+
+            plantHeight: "தாவர உயரம்",
+            plantHeightDesc: "மண் மட்டத்திலிருந்து முக்கிய தண்டின் மேல் வரை அளவிடவும்",
+            stemDiameter: "தண்டு விட்டம்",
+            stemDiameterDesc: "தரையிலிருந்து 30 செ.மீ. உயரத்தில் முக்கிய தண்டின் தடிமனை அளவிடவும்",
+            leafCount: "செயலில் உள்ள இலை எண்ணிக்கை",
+            leafCountDesc: "ஆரோக்கியமான, முழுமையாக வளர்ந்த இலைகளை மட்டும் எண்ணவும்",
+            plantAge: "தாவர வயது",
+            plantAgeDesc: "நடவு செய்த நாளிலிருந்து மாதங்களின் எண்ணிக்கை",
+            soilMoisture: "மண் ஈரப்பதம்",
+            soilMoistureDesc: "தற்போதைய மண் ஈரப்பத நிலை",
+            temperature: "சராசரி வெப்பநிலை",
+            temperatureDesc: "உங்கள் பகுதியின் சராசரி தினசரி வெப்பநிலை",
+            fertilizer: "உர பயன்பாடு",
+            fertilizerDesc: "பயன்படுத்தும் உரத்தின் வகை மற்றும் அதிர்வெண்",
+            plantingDensity: "நடவு அடர்த்தி",
+            plantingDensityDesc: "ஹெக்டேருக்கு தாவரங்களின் எண்ணிக்கை",
+            variety: "கசாவா வகை",
+            varietyDesc: "நீங்கள் வளர்க்கும் கசாவா வகையை தேர்ந்தெடுக்கவும்",
+
+            moistureLevels: {
+                low: "குறைவு (வறண்ட மண்)",
+                medium: "நடுத்தர (ஈரமான மண்)",
+                high: "அதிக (ஈரமான மண்)",
+            },
+            fertilizerTypes: {
+                none: "உரம் இல்லை",
+                organic: "இயற்கை உரம்",
+                chemical: "இரசாயன உரம்",
+                mixed: "கலப்பு (இயற்கை + இரசாயன)",
+            },
+            varieties: {
+                local: "உள்ளூர் வகை",
+                improved: "மேம்படுத்தப்பட்ட வகை",
+                hybrid: "கலப்பின வகை",
+            },
+
+            cm: "செ.மீ.",
+            months: "மாதங்கள்",
+            celsius: "°C",
+            plantsPerHectare: "தாவரங்கள்/ஹெக்டேர்",
+
+            predictYield: "மகசூலை கணிக்கவும்",
+            predicting: "கணிக்கிறது...",
+            reset: "படிவத்தை மீட்டமைக்கவும்",
+            backToHome: "முகப்புக்கு",
+
+            required: "இந்த புலம் தேவை",
+            invalidNumber: "தயவுசெய்து சரியான எண்ணை உள்ளிடவும்",
+        },
+    },
 };
 
 export const languageNames = {
