@@ -1,103 +1,196 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useAppContext } from "./providers";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Moon, Sun, Globe, Camera, BarChart3, Leaf } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { translations, languageNames } from "@/lib/constants";
+
+export default function LandingPage() {
+  type Language = "en" | "si" | "ta"
+  const { language, setLanguage, theme, setTheme } = useAppContext();
+  const t = translations[language]
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div
+      className={`min-h-screen transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-br from-green-950 via-amber-950 to-green-900 text-green-50"
+          : "bg-gradient-to-br from-green-50 via-amber-50 to-green-100 text-green-900"
+      }`}
+    >
+      {/* Header */}
+      <header
+        className={`sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-300 ${
+          theme === "dark" ? "bg-green-950/80 border-green-800" : "bg-green-50/80 border-green-200"
+        }`}
+      >
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Leaf className="h-8 w-8 text-green-600" />
+            <h1 className="text-2xl font-bold">{t.appTitle}</h1>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="flex items-center space-x-2">
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`${
+                    theme === "dark" ? "hover:bg-green-800 text-green-100" : "hover:bg-green-100 text-green-700"
+                  }`}
+                >
+                  <Globe className="h-4 w-4 mr-1" />
+                  {languageNames[language]}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className={`${theme === "dark" ? "bg-green-900 border-green-700" : "bg-white border-green-200"}`}
+              >
+                {Object.entries(languageNames).map(([code, name]) => (
+                  <DropdownMenuItem
+                    key={code}
+                    onClick={() => setLanguage(code as Language)}
+                    className={`${
+                      theme === "dark" ? "hover:bg-green-800 text-green-100" : "hover:bg-green-50 text-green-700"
+                    }`}
+                  >
+                    {name}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              className={`${
+                theme === "dark" ? "hover:bg-green-800 text-green-100" : "hover:bg-green-100 text-green-700"
+              }`}
+            >
+              {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <main className="container mx-auto px-4 py-8 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Hero Content */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">{t.tagline}</h2>
+              <p
+                className={`text-lg md:text-xl leading-relaxed ${
+                  theme === "dark" ? "text-green-200" : "text-green-700"
+                }`}
+              >
+                {t.description}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg">
+                {t.getStarted}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className={`px-8 py-3 text-lg border-2 transition-colors ${
+                  theme === "dark"
+                    ? "border-green-400 text-green-400 hover:bg-green-400 hover:text-green-900"
+                    : "border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                }`}
+              >
+                {t.learnMore}
+              </Button>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="relative">
+            <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                alt="Cassava field with healthy plants"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div
+                className={`absolute inset-0 bg-gradient-to-t ${
+                  theme === "dark" ? "from-green-900/20 to-transparent" : "from-green-900/10 to-transparent"
+                }`}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mt-16 md:mt-24">
+          <Link href="/disease-detection" className="group">
+            <Card
+              className={`h-full transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 ${
+                theme === "dark"
+                  ? "bg-green-900/50 border-green-700 hover:border-green-500"
+                  : "bg-white/80 border-green-200 hover:border-green-400"
+              }`}
+            >
+              <CardContent className="p-8 text-center space-y-4">
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${
+                    theme === "dark" ? "bg-green-700" : "bg-green-100"
+                  }`}
+                >
+                  <Camera className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold">{t.diseaseDetection}</h3>
+                <p className={`text-lg ${theme === "dark" ? "text-green-200" : "text-green-600"}`}>{t.diseaseDesc}</p>
+                <Button className="mt-4 bg-green-600 hover:bg-green-700 text-white group-hover:bg-green-700">
+                  {t.getStarted}
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/yield-prediction" className="group">
+            <Card
+              className={`h-full transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 ${
+                theme === "dark"
+                  ? "bg-amber-900/50 border-amber-700 hover:border-amber-500"
+                  : "bg-white/80 border-amber-200 hover:border-amber-400"
+              }`}
+            >
+              <CardContent className="p-8 text-center space-y-4">
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${
+                    theme === "dark" ? "bg-amber-700" : "bg-amber-100"
+                  }`}
+                >
+                  <BarChart3 className="h-8 w-8 text-amber-600" />
+                </div>
+                <h3 className="text-2xl font-bold">{t.yieldPrediction}</h3>
+                <p className={`text-lg ${theme === "dark" ? "text-amber-200" : "text-amber-600"}`}>{t.yieldDesc}</p>
+                <Button className="mt-4 bg-amber-600 hover:bg-amber-700 text-white group-hover:bg-amber-700">
+                  {t.getStarted}
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
